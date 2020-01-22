@@ -1,3 +1,3 @@
-import hello from "./bin/hello.js";
+import hello from './bin/hello';
 
 export default hello;
