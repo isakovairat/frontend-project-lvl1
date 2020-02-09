@@ -12,7 +12,7 @@ const getCorrectAnswer = (number, userAnswer) => {
 
 const getUserAnswer = () => {
   const number = generateTheQuestion();
-  const userAnswer = readlineSync.question(`Question: ${number}\n`);
+  const userAnswer = readlineSync.question(`Question: ${number}\nYour answer: `);
   return [number, userAnswer];
 };
 
@@ -32,12 +32,11 @@ const runBrainEvenGame = (userName) => {
     [number, userAnswer] = getUserAnswer();
     const correctAnswer = getCorrectAnswer(number, userAnswer);
     if (!correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '
-      ${getOppositeAnswer(userAnswer)}'\nLet's try again, ${userName}`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getOppositeAnswer(userAnswer)}'\nLet's try again, ${userName}`);
       break;
     } else {
       correctAnswers += 1;
-      console.log('Correct!\n');
+      console.log('Correct!');
       if (correctAnswers === 3) {
         console.log(`Congratulations, ${userName}!`);
         break;
