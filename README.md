@@ -32,4 +32,10 @@ The goal of the game is to show the player a series of numbers that form an arit
 
 [![asciicast](https://asciinema.org/a/bzly42VRLCMsdNuHQiGGAHwOz.svg)](https://asciinema.org/a/bzly42VRLCMsdNuHQiGGAHwOz)
 
+## Brain-prime game
+
+The goal of the game is to define a prime number.
+
+[![asciicast](https://asciinema.org/a/sC9Bw532vcnRD65OiluogXJv2.svg)](https://asciinema.org/a/sC9Bw532vcnRD65OiluogXJv2)
+
 [hexlet]: hexlet.io
