@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 import { generateNumber } from './generateNumber';
 
-const printDescription = () => console.log('What is the result of the expression?');
+const numberOfAttempts = 3;
 
-// const generateNumber = () => Math.floor(Math.random() * Math.floor(100));
+const printDescription = () => console.log('What is the result of the expression?');
 
 const generateSign = () => {
   const signs = ['+', '-', '*'];
@@ -14,14 +14,18 @@ const generateQuestion = (num1, num2, sign) => `${num1} ${sign} ${num2}`;
 
 const getCorrectAnswer = (num1, num2, sign) => {
   let result = 0;
-  if (sign === '+') {
-    result = Number(num1) + Number(num2);
-  }
-  if (sign === '-') {
-    result = Number(num1) - Number(num2);
-  }
-  if (sign === '*') {
-    result = Number(num1) * Number(num2);
+  switch (sign) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    default:
+      break;
   }
   return result;
 };
@@ -33,7 +37,7 @@ const runBrainCalcGame = (userName) => {
   let correctAnswers = 0;
   let userAnswer;
   let correctAnswer;
-  while (correctAnswers <= 3) {
+  while (correctAnswers <= numberOfAttempts) {
     const num1 = generateNumber();
     const num2 = generateNumber();
     const sign = generateSign();
@@ -45,7 +49,7 @@ const runBrainCalcGame = (userName) => {
     } else {
       correctAnswers += 1;
       console.log('Correct!');
-      if (correctAnswers === 3) {
+      if (correctAnswers === numberOfAttempts) {
         console.log(`Congratulations, ${userName}`);
         break;
       }

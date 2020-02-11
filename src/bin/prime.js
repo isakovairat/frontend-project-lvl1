@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 import { generateNumber } from './generateNumber';
 
+const randomLimit = 1001;
+const numberOfAttempts = 3;
+
 const printDescription = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const getUserAnswer = (question) => readlineSync.question(`${question}\nYour answer: `);
@@ -15,8 +18,8 @@ const isPrime = (num) => {
 const runBrainPrimeGame = (userName) => {
   printDescription();
   let correctAnswers = 0;
-  while (correctAnswers <= 3) {
-    const randomNumber = generateNumber(1001);
+  while (correctAnswers <= numberOfAttempts) {
+    const randomNumber = generateNumber(randomLimit);
     const correctAnswer = isPrime(randomNumber);
     const userAnswer = getUserAnswer(`Question: ${randomNumber}`);
     if (userAnswer === 'no' && correctAnswer) {
@@ -28,7 +31,7 @@ const runBrainPrimeGame = (userName) => {
     } else if ((userAnswer === 'yes' && correctAnswer) || (userAnswer === 'no' && !correctAnswer)) {
       correctAnswers += 1;
       console.log('Correct!');
-      if (correctAnswers === 3) {
+      if (correctAnswers === numberOfAttempts) {
         console.log(`Congratulations, ${userName}`);
         break;
       }

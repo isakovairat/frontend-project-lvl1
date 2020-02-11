@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { generateNumber } from './generateNumber';
 
+const numberOfAttempts = 3;
+
 const printDescription = () => console.log('What number is missing in the progression?');
 
 const generateProgression = () => {
@@ -34,7 +36,7 @@ const runBrainProgressionGame = (userName) => {
   let correctAnswers = 0;
   let userAnswer = 0;
   let resultArray;
-  while (correctAnswers <= 3) {
+  while (correctAnswers <= numberOfAttempts) {
     resultArray = generateProgression();
     // Getting random item from array
     const correctAnswer = resultArray[Math.floor(Math.random() * resultArray.length)];
@@ -45,7 +47,7 @@ const runBrainProgressionGame = (userName) => {
     } else {
       correctAnswers += 1;
       console.log('Correct!');
-      if (correctAnswers === 3) {
+      if (correctAnswers === numberOfAttempts) {
         console.log(`Congratulations, ${userName}`);
         break;
       }

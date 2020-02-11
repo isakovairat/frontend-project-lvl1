@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const numberOfAttempts = 3;
+
 const generateTheQuestion = () => Math.floor(Math.random() * Math.floor(100));
 
 const printDescription = () => console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
@@ -28,7 +30,7 @@ const runBrainEvenGame = (userName) => {
   let correctAnswers = 0;
   let userAnswer;
   let number;
-  while (correctAnswers <= 3) {
+  while (correctAnswers <= numberOfAttempts) {
     [number, userAnswer] = getUserAnswer();
     const correctAnswer = getCorrectAnswer(number, userAnswer);
     if (!correctAnswer) {
@@ -37,7 +39,7 @@ const runBrainEvenGame = (userName) => {
     } else {
       correctAnswers += 1;
       console.log('Correct!');
-      if (correctAnswers === 3) {
+      if (correctAnswers === numberOfAttempts) {
         console.log(`Congratulations, ${userName}!`);
         break;
       }

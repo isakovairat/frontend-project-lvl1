@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { generateNumber } from './generateNumber';
 
+const numberOfAttempts = 3;
+
 const printDescription = () => console.log('Find the greatest common divisor of given numbers.');
 
 const gcd = (num1, num2) => {
@@ -19,7 +21,7 @@ const runBrainGcdGame = (userName) => {
   let correctAnswers = 0;
   let userAnswer = 0;
   let correctAnswer;
-  while (correctAnswers <= 3) {
+  while (correctAnswers <= numberOfAttempts) {
     const num1 = generateNumber();
     const num2 = generateNumber();
     userAnswer = getUserAnswer(generateQuestion(num1, num2));
@@ -30,7 +32,7 @@ const runBrainGcdGame = (userName) => {
     } else {
       correctAnswers += 1;
       console.log('Correct!');
-      if (correctAnswers === 3) {
+      if (correctAnswers === numberOfAttempts) {
         console.log(`Congratulations, ${userName}`);
         break;
       }
