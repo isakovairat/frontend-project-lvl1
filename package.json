@@ -1,11 +1,13 @@
 {
   "name": "frontend-project-lvl1",
-  "version": "1.0.1",
+  "version": "1.8.0",
   "description": "",
   "main": "index.js",
   "bin": {
     "brain-even": "dist/bin/games/brain-even.js",
-    "brain-calc": "dist/bin/games/brain-calc.js"
+    "brain-calc": "dist/bin/games/brain-calc.js",
+    "brain-gcd": "dist/bin/games/brain-gcd.js",
+    "brain-progression": "dist/bin/games/brain-progression.js"
   },
   "engines": {
     "node": ">=8"

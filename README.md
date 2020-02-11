@@ -20,4 +20,16 @@ The essence of the game is as follows: the user is shown a random mathematical e
 
 [![asciicast](https://asciinema.org/a/LiQllDMaEch0VrvIFv81QPqeR.svg)](https://asciinema.org/a/LiQllDMaEch0VrvIFv81QPqeR)
 
+## Brain-gcd game
+
+The essence of the game is the following: the user is shown two random numbers, for example, 25 50. The user must calculate and enter the largest common divider of these numbers.
+
+[![asciicast](https://asciinema.org/a/nJKUNL8EIofrzN0wh8n7FmR27.svg)](https://asciinema.org/a/nJKUNL8EIofrzN0wh8n7FmR27)
+
+## Brain-progression game
+
+The goal of the game is to show the player a series of numbers that form an arithmetic progression, replacing any of the numbers with two points. The player must determine this number.
+
+[![asciicast](https://asciinema.org/a/bzly42VRLCMsdNuHQiGGAHwOz.svg)](https://asciinema.org/a/bzly42VRLCMsdNuHQiGGAHwOz)
+
 [hexlet]: hexlet.io

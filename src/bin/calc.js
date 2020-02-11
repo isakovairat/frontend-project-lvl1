@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
+import { generateNumber } from './generateNumber';
 
 const printDescription = () => console.log('What is the result of the expression?');
 
-const generateNumber = () => Math.floor(Math.random() * Math.floor(100));
+// const generateNumber = () => Math.floor(Math.random() * Math.floor(100));
 
 const generateSign = () => {
   const signs = ['+', '-', '*'];
