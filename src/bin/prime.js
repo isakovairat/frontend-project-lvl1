@@ -6,8 +6,9 @@ const printDescription = () => console.log('Answer "yes" if given number is prim
 const getUserAnswer = (question) => readlineSync.question(`${question}\nYour answer: `);
 
 const isPrime = (num) => {
-  for(let i = 2, s = Math.sqrt(num); i <= s; i++)
-    if(num % i === 0) return false;
+  for (let i = 2, end = Math.sqrt(num); i <= end; i += 1) {
+    if (num % i === 0) return false;
+  }
   return num > 1;
 };
 
@@ -24,7 +25,7 @@ const runBrainPrimeGame = (userName) => {
     } else if (userAnswer === 'yes' && !correctAnswer) {
       console.log(`"${userAnswer}" is wrong ;(. Correct answer was "no"`);
       break;
-    } else if (userAnswer === 'yes' && correctAnswer || userAnswer === 'no' && !correctAnswer) {
+    } else if ((userAnswer === 'yes' && correctAnswer) || (userAnswer === 'no' && !correctAnswer)) {
       correctAnswers += 1;
       console.log('Correct!');
       if (correctAnswers === 3) {
@@ -35,4 +36,5 @@ const runBrainPrimeGame = (userName) => {
   }
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { runBrainPrimeGame };
