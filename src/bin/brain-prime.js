@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { hello } from '../hello';
-import { runBrainPrimeGame } from '../prime';
+import hello from '../../modules/hello';
+import runBrainPrimeGame from '../../modules/prime';
 
 console.log('Welcome to the Brain Games!\n');
 const name = hello();

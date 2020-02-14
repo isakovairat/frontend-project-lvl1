@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateNumber } from './generateNumber';
+import { generateNumber } from '../utils/generateNumber';
 
 const numberOfAttempts = 3;
 
@@ -55,5 +55,4 @@ const runBrainProgressionGame = (userName) => {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { runBrainProgressionGame };
+export default runBrainProgressionGame;

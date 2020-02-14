@@ -47,5 +47,4 @@ const runBrainEvenGame = (userName) => {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { runBrainEvenGame };
+export default runBrainEvenGame;

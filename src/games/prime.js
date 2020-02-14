@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateNumber } from './generateNumber';
+import { generateNumber } from '../utils/generateNumber';
 
 const randomLimit = 1001;
 const numberOfAttempts = 3;
@@ -39,5 +39,4 @@ const runBrainPrimeGame = (userName) => {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { runBrainPrimeGame };
+export default runBrainPrimeGame;
