@@ -1,50 +1,18 @@
-import readlineSync from 'readline-sync';
+import generateNumber from "../utils/generateNumber";
+import check from '../index';
 
-const numberOfAttempts = 3;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateTheQuestion = () => Math.floor(Math.random() * Math.floor(100));
-
-const printDescription = () => console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
-
-const getCorrectAnswer = (number, userAnswer) => {
-  if (number % 2 === 0 && userAnswer === 'yes') return (1);
-  if (number % 2 === 1 && userAnswer === 'no') return (1);
-  return (0);
+const isEven = (number) => {
+  if (number % 2 === 0) return ('yes');
+  return ('no');
 };
 
-const getUserAnswer = () => {
-  const number = generateTheQuestion();
-  const userAnswer = readlineSync.question(`Question: ${number}\nYour answer: `);
-  return [number, userAnswer];
+const getCorrectAnswer = () => {
+  const number = generateNumber();
+  const question = `${number}`;
+  const correctAnswer = isEven(number);
+  return [question, correctAnswer];
 };
 
-const getOppositeAnswer = (userAnswer) => {
-  if (userAnswer === 'yes') {
-    return 'no';
-  }
-  return 'yes';
-};
-
-const runBrainEvenGame = (userName) => {
-  printDescription();
-  let correctAnswers = 0;
-  let userAnswer;
-  let number;
-  while (correctAnswers <= numberOfAttempts) {
-    [number, userAnswer] = getUserAnswer();
-    const correctAnswer = getCorrectAnswer(number, userAnswer);
-    if (!correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getOppositeAnswer(userAnswer)}'\nLet's try again, ${userName}`);
-      break;
-    } else {
-      correctAnswers += 1;
-      console.log('Correct!');
-      if (correctAnswers === numberOfAttempts) {
-        console.log(`Congratulations, ${userName}!`);
-        break;
-      }
-    }
-  }
-};
-
-export default runBrainEvenGame;
+export default () => check(description, getCorrectAnswer);

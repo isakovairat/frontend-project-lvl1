@@ -2,9 +2,9 @@ import { generateNumber } from '../utils/generateNumber';
 import generateSign from '../utils/generateSign';
 import check from '../index';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
-const getCorrectValue = (num1, num2, sign) => {
+const calcExp = (num1, num2, sign) => {
   let result = 0;
   switch (sign) {
     case '+':
@@ -27,7 +27,7 @@ const getCorrectAnswer = () => {
   const num2 = generateNumber();
   const sign = generateSign();
   const question = `${num1} ${sign} ${num2}`;
-  const correctAnswer = getCorrectValue(num1, num2, sign);
+  const correctAnswer = calcExp(num1, num2, sign);
   return [question, String(correctAnswer)];
 };
 
