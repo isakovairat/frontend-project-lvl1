@@ -1,4 +1,4 @@
-import generateNumber from "../utils/generateNumber";
+import { generateNumber } from '../utils/generateNumber';
 import check from '../index';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

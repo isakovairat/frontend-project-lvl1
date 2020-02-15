@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetUser from "./utils/greetUser";
+import greetUser from './utils/greetUser';
 
 const numberOfAttempts = 3;
 

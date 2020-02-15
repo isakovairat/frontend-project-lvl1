@@ -1,4 +1,4 @@
-import generateNumber from '../utils/generateNumber';
+import { generateNumber } from '../utils/generateNumber';
 import check from '../index';
 
 const randomLimit = 1001;
