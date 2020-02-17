@@ -1,11 +1,15 @@
 import { generateNumber } from '../utils/generateNumber';
-import generateSign from '../utils/generateSign';
 import check from '../index';
 
 const description = 'What is the result of the expression?';
 
+const generateSign = () => {
+  const signs = ['+', '-', '*'];
+  return signs[Math.floor(Math.random() * signs.length)];
+};
+
 const calcExp = (num1, num2, sign) => {
-  let result = 0;
+  let result;
   switch (sign) {
     case '+':
       result = num1 + num2;

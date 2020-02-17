@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import greetUser from './utils/greetUser';
 
 const numberOfAttempts = 3;
 
@@ -17,8 +16,10 @@ const makeLevel = (question, correctAnswer) => {
   return isCorrect;
 };
 
-const start = (description, level) => {
-  const userName = greetUser();
+const start = (description, createQuestion) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(description);
   let correctAnswers = 0;
   let isCorrect;
@@ -29,7 +30,7 @@ const start = (description, level) => {
       console.log(`Congratulations, ${userName}`);
       break;
     }
-    [question, correctAnswer] = level();
+    [question, correctAnswer] = createQuestion();
     isCorrect = makeLevel(question, correctAnswer);
     if (isCorrect) {
       correctAnswers += 1;
