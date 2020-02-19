@@ -23,14 +23,12 @@ const start = (description, createQuestion) => {
   console.log(description);
   let correctAnswers = 0;
   let isCorrect;
-  let question;
-  let correctAnswer;
   while (correctAnswers <= numberOfAttempts) {
     if (correctAnswers === numberOfAttempts) {
       console.log(`Congratulations, ${userName}`);
       break;
     }
-    [question, correctAnswer] = createQuestion();
+    const [question, correctAnswer] = createQuestion();
     isCorrect = makeLevel(question, correctAnswer);
     if (isCorrect) {
       correctAnswers += 1;
