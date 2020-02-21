@@ -21,15 +21,13 @@ const start = (description, createQuestion) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
-  let correctAnswers = 0;
-  let isCorrect;
-  while (correctAnswers <= numberOfAttempts) {
+  for (let correctAnswers = 0; correctAnswers <= numberOfAttempts; correctAnswers += 1) {
     if (correctAnswers === numberOfAttempts) {
       console.log(`Congratulations, ${userName}`);
       break;
     }
     const [question, correctAnswer] = createQuestion();
-    isCorrect = makeLevel(question, correctAnswer);
+    const isCorrect = makeLevel(question, correctAnswer);
     if (isCorrect) {
       correctAnswers += 1;
     } else {
