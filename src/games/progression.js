@@ -5,7 +5,7 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const generateProgression = () => {
-  let startNumber = generateNumber();
+  const startNumber = generateNumber();
   const step = generateNumber(1, 10);
   const progression = [];
   for (let i = 0; i <= progressionLength; i += 1) {
