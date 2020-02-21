@@ -5,7 +5,7 @@ const description = 'What is the result of the expression?';
 
 const generateSign = () => {
   const signs = ['+', '-', '*'];
-  return signs[Math.floor(Math.random() * signs.length)];
+  return signs[generateNumber(0, 3)];
 };
 
 const calcExp = (num1, num2, sign) => {

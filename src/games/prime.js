@@ -15,7 +15,7 @@ const isPrime = (num) => {
 
 const getCorrectAnswer = () => {
   const number = generateNumber(randomLimit);
-  const question = `${number}`;
+  const question = number.toString();
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
   return [question, String(correctAnswer)];
 };
