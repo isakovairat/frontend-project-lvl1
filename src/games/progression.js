@@ -6,26 +6,25 @@ const progressionLength = 10;
 
 const generateProgression = () => {
   let startNumber = generateNumber();
-  const step = generateNumber(10);
+  const step = generateNumber(1, 10);
   const progression = [];
-  while (progression.length !== progressionLength) {
-    progression.push(startNumber + step);
-    startNumber += step;
+  for (let i = 0; i <= progressionLength; i += 1) {
+    progression.push(startNumber + step * i);
   }
   return progression;
 };
 
 const getStrProgression = (progression) => {
-  const hideElem = progression[generateNumber(0, 10)];
+  const hiddenIndex = generateNumber(0, progressionLength);
   let result = '';
   for (let i = 0; i < progression.length; i += 1) {
-    if (progression[i] === hideElem) {
+    if (i === hiddenIndex) {
       result = `${result} ..`;
     } else {
       result = `${result} ${progression[i]}`;
     }
   }
-  return [result, String(hideElem)];
+  return [result, progression[hiddenIndex].toString()];
 };
 
 const getCorrectAnswer = () => getStrProgression(generateProgression());
