@@ -1,11 +1,11 @@
 import { generateNumber } from '../utils/generateNumber';
-import check from '../index';
+import playTheGame from '../index';
 
 const description = 'What is the result of the expression?';
 
 const generateSign = () => {
   const signs = ['+', '-', '*'];
-  return signs[generateNumber(0, 3)];
+  return signs[generateNumber(0, signs.length)];
 };
 
 const calcExp = (num1, num2, sign) => {
@@ -32,7 +32,7 @@ const getCorrectAnswer = () => {
   const sign = generateSign();
   const question = `${num1} ${sign} ${num2}`;
   const correctAnswer = calcExp(num1, num2, sign);
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer.toString()];
 };
 
-export default () => check(description, getCorrectAnswer);
+export default () => playTheGame(description, getCorrectAnswer);

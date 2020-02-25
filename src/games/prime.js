@@ -1,5 +1,5 @@
 import { generateNumber } from '../utils/generateNumber';
-import check from '../index';
+import playTheGame from '../index';
 
 const randomLimit = 1001;
 
@@ -17,7 +17,7 @@ const getCorrectAnswer = () => {
   const number = generateNumber(randomLimit);
   const question = number.toString();
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer.toString()];
 };
 
-export default () => check(description, getCorrectAnswer);
+export default () => playTheGame(description, getCorrectAnswer);

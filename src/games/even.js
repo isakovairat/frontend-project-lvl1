@@ -1,5 +1,5 @@
 import { generateNumber } from '../utils/generateNumber';
-import check from '../index';
+import playTheGame from '../index';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,4 +11,4 @@ const getCorrectAnswer = () => {
   return [question.toString(), correctAnswer];
 };
 
-export default () => check(description, getCorrectAnswer);
+export default () => playTheGame(description, getCorrectAnswer);

@@ -1,12 +1,12 @@
 import { generateNumber } from '../utils/generateNumber';
-import check from '../index';
+import playTheGame from '../index';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
+const maxStep = 10;
+const minStep = 1;
 
-const generateProgression = () => {
-  const startNumber = generateNumber();
-  const step = generateNumber(1, 10);
+const generateProgression = (startNumber, step) => {
   const progression = [];
   for (let i = 0; i <= progressionLength; i += 1) {
     progression.push(startNumber + step * i);
@@ -18,15 +18,13 @@ const getStrProgression = (progression) => {
   const hiddenIndex = generateNumber(0, progressionLength);
   let result = '';
   for (let i = 0; i < progression.length; i += 1) {
-    if (i === hiddenIndex) {
-      result = `${result} ..`;
-    } else {
-      result = `${result} ${progression[i]}`;
-    }
+    result = (i === hiddenIndex) ? `${result}..` : `${result}${progression[i]}`;
+    if (i !== progression.length - 1) result += ' ';
   }
   return [result, progression[hiddenIndex].toString()];
 };
 
-const getCorrectAnswer = () => getStrProgression(generateProgression());
+const getCorrectAnswer = () => getStrProgression(generateProgression(generateNumber(),
+  generateNumber(minStep, maxStep)));
 
-export default () => check(description, getCorrectAnswer);
+export default () => playTheGame(description, getCorrectAnswer);
