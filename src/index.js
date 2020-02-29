@@ -10,7 +10,7 @@ const start = (description, createQuestionAndCorrectAnswer) => {
   for (let correctAnswers = 0; correctAnswers < numberOfAttempts; correctAnswers += 1) {
     if (correctAnswers === numberOfAttempts) {
       console.log(`Congratulations, ${userName}`);
-      break;
+      return;
     }
     const [question, correctAnswer] = createQuestionAndCorrectAnswer();
     console.log(`Question: ${question}`);
@@ -18,11 +18,9 @@ const start = (description, createQuestionAndCorrectAnswer) => {
     if (userAnswer !== correctAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${userName}`);
-      break;
-    } else {
-      console.log('Correct!');
-      correctAnswers += 1;
+      return;
     }
+    console.log('Correct!');
   }
 };
 
